@@ -1,0 +1,150 @@
+Problem: Best Case Scenario
+Status = Optimal
+Start and end times for each task (hours):
+A (Describe product):
+    Start = 0.0
+    End = 16.0
+B (Develop marketing strategy):
+    Start = 0.0
+    End = 20.0
+C (Design brochure):
+    Start = 16.0
+    End = 26.0
+D1 (Requirements analysis):
+    Start = 16.0
+    End = 26.0
+D2 (Software design):
+    Start = 26.0
+    End = 46.0
+D3 (System design):
+    Start = 26.0
+    End = 41.0
+D4 (Coding):
+    Start = 46.0
+    End = 86.0
+D5 (Write documentation):
+    Start = 86.0
+    End = 106.0
+D6 (Unit testing):
+    Start = 86.0
+    End = 101.0
+D7 (System testing):
+    Start = 101.0
+    End = 121.0
+D8 (Package deliverables):
+    Start = 121.0
+    End = 126.0
+E (Survey potential market):
+    Start = 26.0
+    End = 46.0
+F (Develop pricing plan):
+    Start = 126.0
+    End = 136.0
+G (Develop implementation plan):
+    Start = 126.0
+    End = 141.0
+H (Write client proposal):
+    Start = 141.0
+    End = 151.0
+Minimum total project time = 151.0 hours
+
+Problem: Expected Case Scenario
+Status = Optimal
+Start and end times for each task (hours):
+A (Describe product):
+    Start = 0.0
+    End = 40.0
+B (Develop marketing strategy):
+    Start = 0.0
+    End = 50.0
+C (Design brochure):
+    Start = 40.0
+    End = 60.0
+D1 (Requirements analysis):
+    Start = 40.0
+    End = 60.0
+D2 (Software design):
+    Start = 60.0
+    End = 100.0
+D3 (System design):
+    Start = 60.0
+    End = 90.0
+D4 (Coding):
+    Start = 100.0
+    End = 220.0
+D5 (Write documentation):
+    Start = 220.0
+    End = 260.0
+D6 (Unit testing):
+    Start = 220.0
+    End = 250.0
+D7 (System testing):
+    Start = 250.0
+    End = 290.0
+D8 (Package deliverables):
+    Start = 290.0
+    End = 300.0
+E (Survey potential market):
+    Start = 60.0
+    End = 100.0
+F (Develop pricing plan):
+    Start = 300.0
+    End = 320.0
+G (Develop implementation plan):
+    Start = 300.0
+    End = 330.0
+H (Write client proposal):
+    Start = 330.0
+    End = 350.0
+Minimum total project time = 350.0 hours
+
+Problem: Worst Case Scenario
+Status = Optimal
+Start and end times for each task (hours):
+A (Describe product):
+    Start = 0.0
+    End = 80.0
+B (Develop marketing strategy):
+    Start = 0.0
+    End = 100.0
+C (Design brochure):
+    Start = 80.0
+    End = 120.0
+D1 (Requirements analysis):
+    Start = 80.0
+    End = 120.0
+D2 (Software design):
+    Start = 120.0
+    End = 200.0
+D3 (System design):
+    Start = 120.0
+    End = 180.0
+D4 (Coding):
+    Start = 200.0
+    End = 440.0
+D5 (Write documentation):
+    Start = 440.0
+    End = 520.0
+D6 (Unit testing):
+    Start = 440.0
+    End = 500.0
+D7 (System testing):
+    Start = 500.0
+    End = 580.0
+D8 (Package deliverables):
+    Start = 580.0
+    End = 600.0
+E (Survey potential market):
+    Start = 120.0
+    End = 200.0
+F (Develop pricing plan):
+    Start = 600.0
+    End = 640.0
+G (Develop implementation plan):
+    Start = 600.0
+    End = 660.0
+H (Write client proposal):
+    Start = 660.0
+    End = 700.0
+Minimum total project time = 700.0 hours
+
