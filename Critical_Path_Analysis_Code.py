@@ -218,3 +218,23 @@ for var in prob_w.variables():
         print(var.name, "=", var.varValue)
 
 #########################
+
+# Open a file to write the solution output for the three problems
+with open('Critical_Path_Analysis_Solution.txt', 'w') as file:
+    for prob, case in zip([prob_b, prob_e, prob_w], ["Best Case", "Expected Case", "Worst Case"]):
+        file.write(f"Problem: {case} Scenario\n")
+        file.write(f"Status = {LpStatus[prob.status]}\n")
+        file.write("Start and end times for each task (hours):\n")
+        for task in tasks_list:
+            if prob == prob_b:
+                start_time = value(start_times_b[task])
+                end_time = value(end_times_b[task])
+            elif prob == prob_e:
+                start_time = value(start_times_e[task])
+                end_time = value(end_times_e[task])
+            elif prob == prob_w:
+                start_time = value(start_times_w[task])
+                end_time = value(end_times_w[task])
+            file.write(f"{task} ({tasks[task]}):\n    Start = {start_time}\n    End = {end_time}\n")
+        file.write(f"Minimum total project time = {end_time} hours\n")
+        file.write("\n")
