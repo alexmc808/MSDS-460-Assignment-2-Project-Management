@@ -183,3 +183,38 @@ for var in prob_e.variables():
         print(var.name, "=", var.varValue)
 
 #########################
+
+# Create the LP problem for worst case scenario
+prob_w = LpProblem("Critical Path Worst Case", LpMinimize)
+
+# Create the LP variables
+start_times_w = {task: LpVariable(f"start_{task}_w", 0, None) for task in tasks_list}
+end_times_w = {task: LpVariable(f"end_{task}_w", 0, None) for task in tasks_list}
+
+# Add the constraints
+for task in tasks_list:
+    prob_w += end_times_w[task] == start_times_w[task] + worst_case_hours[task], f"{task}_duration"
+    for predecessor in predecessors[task]:
+        prob_w += start_times_w[task] >= end_times_w[predecessor], f"{task}_predecessor_{predecessor}"
+
+# Set the objective function
+prob_w += lpSum([end_times_w[task] for task in tasks_list]), "minimize_end_times"
+
+# Solve the LP problem
+status = prob_w.solve()
+
+# Print the results
+print("Critical Path time:")
+for task in tasks_list:
+    if value(start_times_w[task]) == 0:
+        print(f"{task} starts at time 0")
+    if value(end_times_w[task]) == max([value(end_times_w[task]) for task in tasks_list]):
+        print(f"{task} ends at {value(end_times_w[task])} hours in duration")
+
+# Print solution
+print("\nSolution variable values (Expected Case):")
+for var in prob_w.variables():
+    if var.name != "_dummy":
+        print(var.name, "=", var.varValue)
+
+#########################
