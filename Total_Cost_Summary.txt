@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 Total Cost Summary:
 Best-Case Scenario: $45704.42
 Expected Scenario: $102116.8
 Worst-Case Scenario: $204233.6
-=======
-Total Cost Summary:
-Best-Case Scenario: $45704.42
-Expected Scenario: $102116.8
-Worst-Case Scenario: $204233.6
->>>>>>> 29bf1901757d14dac7e3c6404921674904f24e85
