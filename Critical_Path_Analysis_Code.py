@@ -238,3 +238,42 @@ with open('Critical_Path_Analysis_Solution.txt', 'w') as file:
             file.write(f"{task} ({tasks[task]}):\n    Start = {start_time}\n    End = {end_time}\n")
         file.write(f"Minimum total project time = {end_time} hours\n")
         file.write("\n")
+#########################
+
+# Cost estimates
+# Using the hourly_rates defined above, calculate an estimated cost to charge a prospective client for each of the three scenarios.
+
+# Provide information on how many of each role works on each task
+roles_included = {
+    'A': {'projectManager': 1},
+    'B': {'projectManager': 1},
+    'C': {'frontendDeveloper': 1},
+    'D1': {'projectManager': 1, 'dataScientist': 1, 'dataEngineer': 1},
+    'D2': {'projectManager': 1, 'frontendDeveloper': 1, 'backendDeveloper': 1, 'dataScientist': 1, 'dataEngineer': 1, 'databaseAdministrator': 1},
+    'D3': {'projectManager': 1, 'frontendDeveloper': 1, 'backendDeveloper': 1, 'dataEngineer': 1, 'databaseAdministrator': 1},
+    'D4': {'frontendDeveloper': 1, 'backendDeveloper': 1, 'dataScientist': 1, 'dataEngineer': 1},
+    'D5': {'projectManager': 1, 'frontendDeveloper': 1, 'backendDeveloper': 1, 'dataScientist': 1, 'dataEngineer': 1},
+    'D6': {'frontendDeveloper': 1, 'backendDeveloper': 1, 'dataScientist': 1, 'dataEngineer': 1},
+    'D7': {'frontendDeveloper': 1, 'backendDeveloper': 1, 'dataScientist': 1},
+    'D8': {'projectManager': 1},
+    'E': {'projectManager': 1},
+    'F': {'projectManager': 1, 'databaseAdministrator': 1},
+    'G': {'projectManager': 1, 'frontendDeveloper': 1, 'backendDeveloper': 1, 'dataScientist': 1, 'dataEngineer': 1},
+    'H': {'projectManager': 1}
+}
+
+# Calculate the total cost for the project (best-case)
+total_cost_best = round(sum(best_case_hours[task] * sum(hourly_rates[role] for role in roles_included[task]) for task in best_case_hours.keys()), 2)
+
+# Calculate the total cost for the project (expected)
+total_cost_expected = round(sum(expected_hours[task] * sum(hourly_rates[role] for role in roles_included[task]) for task in expected_hours.keys()), 2)
+
+# Calculate the total cost for the project (worst-case)
+total_cost_worst = round(sum(worst_case_hours[task] * sum(hourly_rates[role] for role in roles_included[task]) for task in worst_case_hours.keys()), 2)
+
+# Open a file to write the total cost estimate for the three scenarios
+with open("Total_Cost_Summary.txt", "w") as file:
+    file.write("Total Cost Summary:\n")
+    file.write(f"Best-Case Scenario: ${total_cost_best}\n")
+    file.write(f"Expected Scenario: ${total_cost_expected}\n")
+    file.write(f"Worst-Case Scenario: ${total_cost_worst}\n")
