@@ -1,0 +1,4 @@
+Total Cost Summary:
+Best-Case Scenario: $45704.42
+Expected Scenario: $102116.8
+Worst-Case Scenario: $204233.6
